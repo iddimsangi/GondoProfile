@@ -1,32 +1,25 @@
 {
-  "name": "about-me-personal-portfolio-website-template",
+  "name": "about-me-template",
   "version": "1.0.0",
-  "description": "Personal Website Template",
+  "description": "Vvveb Bootstrap 5 template",
+  "author": "Ziadin Givan",
+  "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "test": "npm run build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.7",
-    "bootstrap": "^5.3.0-alpha3"
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "sass": "^1.61.0",
-    "vite": "^4.2.1"
-  },
-  "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template",
-    "personal website",
-    "bootstrap 5"
-  ],
-  "author": "Ease Template",
-  "license": "ISC"
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-format-html": "^2.3.0",
+    "sass": "^1.71.1",
+    "node-sass": "^9.0.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-sass": "^5.1.0",
+    "puppeteer": "^22.3.0 "
+  }
 }

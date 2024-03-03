@@ -2,8 +2,15 @@
 
 ![AboutMe - Personal Website Template](https://user-images.githubusercontent.com/30169935/231987845-1895e4ac-b07d-4d1f-b2b1-f9731b5adcc4.jpg)
 
-Simple personal website templates free, About me is the free personal website bootstrap template. Built with Bootstrap and vite.js.
+Simple personal website templates free, About me is the free personal website bootstrap template. Built with Bootstrap 5.
 AboutMe is a free and open source for your any purpose of use. Curated By [Easetemplate](https://easetemplate.com/)
+
+## [Vvveb CMS](https://www.vvveb.com) theme.
+
+👉🏻 [Theme page](https://themes.vvveb.com/product/cohub) 
+👉🏻 [Theme development documentation](http://dev.vvveb.com/theme-introduction)
+
+Use this template either as a standalone Bootstrap 5 template or as a Vvveb CMS theme.
 
 [About ME](https://preview.easetemplate.com/aboutme/)
 
@@ -12,7 +19,6 @@ AboutMe is a free and open source for your any purpose of use. Curated By [Easet
 This product is built using the following widely used technologies:
 
 - Most popular CSS Framework [Bootstrap 5](https://getbootstrap.com/)
-- Productive workflow tool [ViteJs](https://vitejs.dev/)
  
 
 ## Table of Contents
@@ -24,38 +30,44 @@ This product is built using the following widely used technologies:
 * [Technical Support or Questions](#technical-support-or-questions)
 
 
+## Build
+
+### Generate html files
+
+```bash
+npm run gulp
+```
+
+### Watch for changes for development
+
+```bash
+npm run gulp watch
+```
+
+### Generate sections list for VvvebJs page builder
+
+```bash
+npm run gulp sections
+```
+
+### Generate screenshots for sections
+
+```bash
+npm run gulp screenshots
+```
+
+
 ## Quick start
 
-1. Download from clone this repository
-
-```
-git clone https://github.com/easetemplates/about-me-personal-portfolio-website-template.git
-```
- 
-
-2. Now run npm install in the main `about-me-personal-portfolio-website-template/` folder to download all the project dependencies. You'll find them in the `node_modules/` folder.
-
-```
-npm install
+- Clone the repo and run it.
+```bash
+git clone https://github.com/Vvveb/about-me-personal-portfolio/edit/
+cd cohub
+npm i
+npm run gulp
 ```
 
-3. Run npm start in the `about-me-personal-portfolio-website-template/` folder to serve the project files using BrowserSync. Running vite will compile the theme and open `/index.html` in your main browser.
 
-```
-npm start
-```
-
-4. Generates a /dist directory with all the production files.
-
-```
-npm run build
-```
-
-5. To run preview of `dist` folder.
-
-```
-npm run preview
-```
 
 ## Documentation
 

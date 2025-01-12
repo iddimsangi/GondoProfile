@@ -6,7 +6,8 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "gulp": "gulp",
+    "build": "gulp",
+    "start": "gulp connect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

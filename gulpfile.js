@@ -3,15 +3,9 @@ const fileinclude = require("gulp-file-include");
 const sass = require("gulp-sass")(require("node-sass"));
 const sassGlob = require("gulp-sass-glob");
 const rename = require("gulp-rename");
-const imageResize = require("gulp-image-resize");
 const through2 = require("through2");
 const connect = require("gulp-connect");
-const puppeteer = require("puppeteer");
 const fs = require("fs");
-const path = require("path");
-
-let baseHref = "";
-let blockPrefix = "landing";
 
 // Backup `index.html` before build
 gulp.task("backup-index", function (done) {
@@ -32,35 +26,13 @@ gulp.task("restore-index", function (done) {
 // File include task (excluding index.html)
 gulp.task("fileinclude", function () {
   return gulp
-    .src([
-      "./src/*.html",
-      "./src/**/*.html",
-      "!./src/index.html",
-      "!**/-*/**",
-      "!**/_*/**",
-    ]) // Exclude index.html
+    .src(["./src/*.html", "./src/**/*.html", "!./src/index.html"])
     .pipe(
       fileinclude({
         prefix: "@@",
         basepath: "@file",
       })
     )
-    .pipe(touch())
-    .pipe(gulp.dest("./"));
-});
-
-// Optional task to process `index.template.html` into `index.html`
-gulp.task("fileinclude-index", function () {
-  return gulp
-    .src("./src/index.template.html")
-    .pipe(
-      fileinclude({
-        prefix: "@@",
-        basepath: "@file",
-      })
-    )
-    .pipe(rename("index.html"))
-    .pipe(touch())
     .pipe(gulp.dest("./"));
 });
 
@@ -73,35 +45,8 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("./css"));
 });
 
-// Watch for changes
-gulp.task("watch", function () {
-  gulp.watch(["./src/*.html", "./src/**/*.html"], gulp.series("fileinclude"));
-  gulp.watch(
-    ["./scss/*.scss", "./scss/**/*.scss", "./scss/**/**/*.scss"],
-    gulp.series("sass")
-  );
-});
-
-// Build task
+// Default task
 gulp.task(
-  "build",
+  "default",
   gulp.series("backup-index", "fileinclude", "sass", "restore-index")
 );
-
-// Start a development server
-gulp.task("start", function () {
-  connect.server({
-    root: ".",
-    livereload: true,
-    port: 8008,
-  });
-});
-
-// Helper function to update file timestamps
-const touch = () =>
-  through2.obj(function (file, enc, cb) {
-    if (file.stat) {
-      file.stat.atime = file.stat.mtime = file.stat.ctime = new Date();
-    }
-    cb(null, file);
-  });
